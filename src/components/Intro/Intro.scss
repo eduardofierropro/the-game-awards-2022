@@ -1,0 +1,135 @@
+.Intro{
+    /* background-color: lime; */
+    position: relative;
+
+    padding: 18vh 0 20vh;
+
+    &-video{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top:0;
+        left:0;
+        /* background-color: gold; */
+        z-index: 1;
+
+        @media screen and (max-width:40rem){
+            object-fit: top right;
+        }
+    }
+    &-vote{}
+    &-marquee{}
+
+}
+
+.Vote{
+    width: 90%;
+    position: relative;
+    z-index: 1;
+    color:white;
+    margin: 0 0 8vh;
+
+    &-h2{}
+    &-img{
+        max-width: 40rem;
+    }
+    &-date{
+        text-transform: uppercase;
+        font-size: clamp( 1rem , 18vw , 10rem);
+        font-weight: 800;
+    }
+    &-place{
+        font-size: clamp( 1rem , 5vw , 4rem);
+        font-weight: 600;
+    }
+    &-month{
+        -webkit-text-stroke: 2px ;
+        -webkit-text-fill-color: transparent;
+    }
+    &-day{
+        margin: 0 0 0 .1em;
+    }
+    &-now{
+        width: 100%;
+        max-width: 33.1rem;
+        margin: .5em 0 0;
+        padding: .7em 1.5em .8em ;
+        border: 1px solid white;
+        background-color: rgba(0,0,0,.15);
+        display: inline-flex;
+        justify-content: center;
+
+        text-transform: uppercase;
+        font-size: 1.5em;
+        transition: all .5s ease;
+        
+        &:hover{
+            background-color: white;
+            color:#ff4b13;
+        }
+    }
+}
+.Marquee{
+    width:100%;
+    position: absolute;
+    bottom: -0.0625rem;
+    z-index: 1;
+    overflow: hidden;
+
+    &-ul {
+        
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        flex-flow: row nowrap;
+        text-transform: uppercase;
+        font-weight: 800;
+       
+        width: 300%;
+        
+        &--stroke{
+            -webkit-text-stroke: 1px;
+            -webkit-text-fill-color: transparent;
+            font-size: 7vw;
+            color:white;
+            animation: desplazar 20s linear infinite both;
+        }
+        &--white{
+            font-size: 3vw;
+            color:#ff4b13;
+            background-color: white;
+            animation: desplazar 24s linear infinite both;
+        }
+    }   
+    &-li{
+        width: 100%;
+        text-align: center;
+
+        &--white{
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin: 0 2px;
+
+            &::after {
+                content: '';
+                display: block;
+                width: .4em;
+                height: .4em;
+                background-color: red;
+                border-radius: 50%;
+                position: absolute;
+                right: -.2em;
+            }
+            
+        }
+    }
+}
+
+
+@keyframes desplazar{
+    0%{     transform: translateX(0%);}
+    100%{   transform: translateX( calc( -100% / 3 * 2 ) );}
+}

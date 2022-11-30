@@ -1,0 +1,93 @@
+.Header{
+    width: 100%;
+    background-color: lightgrey;    
+    color:white;
+    font-size: 1.3em;
+    font-family: var(--tipo-secundaria);
+
+    position: fixed;
+    top:0;
+    z-index: 3;
+    
+    .Wrapper{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &-sup{
+        padding: 1.5em 0;
+        background-color: rgb(212,63,16);
+    }
+    &-h1{}
+    &-a{}
+    &-nav{
+        @media screen and (max-width:60rem) { display: none; }
+    }
+    &-ul{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        gap:1em;
+    }
+    &-li{}
+    &-link{
+        text-transform: uppercase;
+        
+        position: relative;
+        &::after{
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: white;
+            transition: all .5s ease;
+            transform: scaleX(0);
+        }
+        &:hover::after , &.active::after{
+            transform: scaleX(1);
+        }
+        &.disabled{
+            opacity: .4;
+            pointer-events: none;
+        }
+    }
+    &-btn{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    &-sign{
+    }
+    &-user{
+        width: 1.4em;
+        height: 1.4em;
+        margin: 0 .5em 0 0; 
+    }
+    &-span{}
+    &-menu{
+        display: none;
+        margin: 0 0 0 1em;
+        @media screen and (max-width:60rem) { display: block; }
+    }
+    &-extra{
+
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    &-list{
+        width: 2em;
+        height: 2em;
+    }
+    &-bottom{
+        background-color: #aa320d;
+        padding: .9rem 0;
+        text-align: center;
+        text-transform: uppercase;
+    }
+}
