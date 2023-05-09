@@ -1,6 +1,6 @@
 ![Imagen del proyecto](https://github.com/eduardofierropro/the-game-awards-2022/blob/main/public/assets/home1.png)
 
-# The Game Awards 2022
+# Copycat: The Game Awards 2022
 
 Este es un repositorio donde he programado desde cero la Home de Tinder directamente en Twitch.
 
